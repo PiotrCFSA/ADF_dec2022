@@ -1,0 +1,23 @@
+{
+	"name": "ds_sink_files_from_github_as_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_save_files_from_github_to_dl2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "jakis.csv",
+				"fileSystem": "zapiszplik"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

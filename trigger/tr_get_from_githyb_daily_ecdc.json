@@ -1,0 +1,24 @@
+{
+	"name": "tr_get_from_githyb_daily_ecdc",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingest_ecdc_data",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-11-18T23:55:00",
+				"timeZone": "Central European Standard Time"
+			}
+		}
+	}
+}

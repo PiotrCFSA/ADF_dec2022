@@ -1,0 +1,9 @@
+{
+	"name": "ADFdec2022",
+	"location": "germanywestcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9087b3d9-bfcc-4bef-aaa6-db51f34cd9bd",
+		"tenantId": "5839b627-d19d-4cc6-860b-13b651547212"
+	}
+}
