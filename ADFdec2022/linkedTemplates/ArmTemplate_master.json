@@ -1,0 +1,188 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADFdec2022"
+		},
+		"ls_GitHub_credential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'credential' of 'ls_GitHub'"
+		},
+		"ls_HttpServer_GitHub_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_HttpServer_GitHub'"
+		},
+		"ls_Lake2_pnc_dec2022_sekcja7_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_Lake2_pnc_dec2022_sekcja7'"
+		},
+		"ls_blob_files_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob_files'"
+		},
+		"ls_blob_files_pnc_dec2022_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob_files_pnc_dec2022'"
+		},
+		"ls_blob_pnc_dec2022_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob_pnc_dec2022'"
+		},
+		"ls_data_lake_gen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_data_lake_gen2'"
+		},
+		"ls_getblob_github_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_getblob_github'"
+		},
+		"ls_redundant_to_data_lake2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_redundant_to_data_lake2'"
+		},
+		"ls_save_files_from_github_to_dl2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_save_files_from_github_to_dl2'"
+		},
+		"ls_GitHub_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "PiotrCFSA"
+		},
+		"ls_HttpServer_GitHub_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/"
+		},
+		"ls_HttpServer_GitHub_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "PiotrCFSA"
+		},
+		"ls_HttpSrv_GetGIT_Files_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().sourceBaseURL}"
+		},
+		"ls_Lake2_pnc_dec2022_sekcja7_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sinklake2.dfs.core.windows.net/"
+		},
+		"ls_data_lake_gen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sinklake2.dfs.core.windows.net/"
+		},
+		"ls_redundant_to_data_lake2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sinklake2.dfs.core.windows.net/"
+		},
+		"ls_save_files_from_github_to_dl2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sinklake2.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADFdec2022_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_GitHub_credential": {
+						"value": "[parameters('ls_GitHub_credential')]"
+					},
+					"ls_HttpServer_GitHub_password": {
+						"value": "[parameters('ls_HttpServer_GitHub_password')]"
+					},
+					"ls_Lake2_pnc_dec2022_sekcja7_accountKey": {
+						"value": "[parameters('ls_Lake2_pnc_dec2022_sekcja7_accountKey')]"
+					},
+					"ls_blob_files_connectionString": {
+						"value": "[parameters('ls_blob_files_connectionString')]"
+					},
+					"ls_blob_files_pnc_dec2022_connectionString": {
+						"value": "[parameters('ls_blob_files_pnc_dec2022_connectionString')]"
+					},
+					"ls_blob_pnc_dec2022_connectionString": {
+						"value": "[parameters('ls_blob_pnc_dec2022_connectionString')]"
+					},
+					"ls_data_lake_gen2_accountKey": {
+						"value": "[parameters('ls_data_lake_gen2_accountKey')]"
+					},
+					"ls_getblob_github_connectionString": {
+						"value": "[parameters('ls_getblob_github_connectionString')]"
+					},
+					"ls_redundant_to_data_lake2_accountKey": {
+						"value": "[parameters('ls_redundant_to_data_lake2_accountKey')]"
+					},
+					"ls_save_files_from_github_to_dl2_accountKey": {
+						"value": "[parameters('ls_save_files_from_github_to_dl2_accountKey')]"
+					},
+					"ls_GitHub_properties_typeProperties_username": {
+						"value": "[parameters('ls_GitHub_properties_typeProperties_username')]"
+					},
+					"ls_HttpServer_GitHub_properties_typeProperties_url": {
+						"value": "[parameters('ls_HttpServer_GitHub_properties_typeProperties_url')]"
+					},
+					"ls_HttpServer_GitHub_properties_typeProperties_userName": {
+						"value": "[parameters('ls_HttpServer_GitHub_properties_typeProperties_userName')]"
+					},
+					"ls_HttpSrv_GetGIT_Files_properties_typeProperties_url": {
+						"value": "[parameters('ls_HttpSrv_GetGIT_Files_properties_typeProperties_url')]"
+					},
+					"ls_Lake2_pnc_dec2022_sekcja7_properties_typeProperties_url": {
+						"value": "[parameters('ls_Lake2_pnc_dec2022_sekcja7_properties_typeProperties_url')]"
+					},
+					"ls_data_lake_gen2_properties_typeProperties_url": {
+						"value": "[parameters('ls_data_lake_gen2_properties_typeProperties_url')]"
+					},
+					"ls_redundant_to_data_lake2_properties_typeProperties_url": {
+						"value": "[parameters('ls_redundant_to_data_lake2_properties_typeProperties_url')]"
+					},
+					"ls_save_files_from_github_to_dl2_properties_typeProperties_url": {
+						"value": "[parameters('ls_save_files_from_github_to_dl2_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADFdec2022_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFdec2022_ArmTemplate_0')]"
+			]
+		}
+	]
+}

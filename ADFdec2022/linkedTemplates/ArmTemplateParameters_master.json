@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFdec2022"
+		},
+		"ls_GitHub_credential": {
+			"value": ""
+		},
+		"ls_HttpServer_GitHub_password": {
+			"value": ""
+		},
+		"ls_Lake2_pnc_dec2022_sekcja7_accountKey": {
+			"value": ""
+		},
+		"ls_blob_files_connectionString": {
+			"value": ""
+		},
+		"ls_blob_files_pnc_dec2022_connectionString": {
+			"value": ""
+		},
+		"ls_blob_pnc_dec2022_connectionString": {
+			"value": ""
+		},
+		"ls_data_lake_gen2_accountKey": {
+			"value": ""
+		},
+		"ls_getblob_github_connectionString": {
+			"value": ""
+		},
+		"ls_redundant_to_data_lake2_accountKey": {
+			"value": ""
+		},
+		"ls_save_files_from_github_to_dl2_accountKey": {
+			"value": ""
+		},
+		"ls_GitHub_properties_typeProperties_username": {
+			"value": "PiotrCFSA"
+		},
+		"ls_HttpServer_GitHub_properties_typeProperties_url": {
+			"value": "https://github.com/"
+		},
+		"ls_HttpServer_GitHub_properties_typeProperties_userName": {
+			"value": "PiotrCFSA"
+		},
+		"ls_HttpSrv_GetGIT_Files_properties_typeProperties_url": {
+			"value": "@{linkedService().sourceBaseURL}"
+		},
+		"ls_Lake2_pnc_dec2022_sekcja7_properties_typeProperties_url": {
+			"value": "https://sinklake2.dfs.core.windows.net/"
+		},
+		"ls_data_lake_gen2_properties_typeProperties_url": {
+			"value": "https://sinklake2.dfs.core.windows.net/"
+		},
+		"ls_redundant_to_data_lake2_properties_typeProperties_url": {
+			"value": "https://sinklake2.dfs.core.windows.net/"
+		},
+		"ls_save_files_from_github_to_dl2_properties_typeProperties_url": {
+			"value": "https://sinklake2.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
