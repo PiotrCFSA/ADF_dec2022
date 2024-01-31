@@ -1,0 +1,15 @@
+{
+	"name": "ls_HttpServer_GitHub",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Basic",
+			"userName": "PiotrCFSA",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEE1OEFGRTE0LUIxNUYtNDQwOC1CRDY5LTEzNUQ5MTY2RDExRV82YTVlYWM3OC01ZWE3LTRjYjYtYWI4ZC02N2E5YzkwYjY4ZmIiDQp9"
+		}
+	}
+}
